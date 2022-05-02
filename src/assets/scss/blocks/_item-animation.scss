@@ -1,0 +1,89 @@
+@import "vars";
+@import "mixins";
+
+.animation-primary:hover {
+  color: var(--main);
+}
+
+.animation-primary:hover path {
+  fill: var(--main);
+}
+
+.animation-primary:active {
+  color: var(--two);
+}
+
+.animation-primary:active path {
+  fill: var(--two);
+}
+
+.animation-primary:focus:not(:active) {
+  color: white;
+  outline: none;
+}
+
+.animation-primary:focus:not(:active) path {
+  fill: white;
+}
+
+.animation-primary:focus:not(:active)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: -4px;
+  right: -8px;
+  bottom: -8px;
+  left: -4px;
+  background-color: var(--two);
+  transition: background-color 0.3s ease;
+}
+
+.animation-primary {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.animation-primary path,
+.animation-primary rect {
+  transition: fill 0.3s ease;
+}
+
+//link
+
+.animation-link {
+  color: rgba(157, 92, 208, 1);
+}
+
+.animation-link {
+  @include font(16px, 22px);
+}
+
+.animation-link:hover {
+  background: no-repeat 0 100%;
+  background-image: linear-gradient($violet-middle, $violet-middle);
+  background-size: 100% 1px;
+  color: $violet-middle;
+}
+
+.animation-link:active {
+  outline: none;
+  color: $violet-dark;
+  background-size: 0% 1px;
+}
+
+.animation-link:focus:not(:active):not(:hover) {
+  position: relative;
+  outline: none;
+  color: $tc-secondary;
+  background-color: $violet-middle;
+}
+
+.animation-link {
+  position: relative;
+
+  @include font(16px, 28px);
+
+  transition: color 0.3s ease-in-out, background-size 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  background-size: 0% 1px;
+}

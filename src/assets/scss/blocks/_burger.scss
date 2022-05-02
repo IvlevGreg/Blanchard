@@ -1,0 +1,82 @@
+.burger {
+  position: relative;
+  width: 25px;
+  height: 18px;
+
+  &__lines {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 2px;
+    width: 16px;
+
+    background-color: white;
+    transition: background-color 0.2s linear;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+
+    display: block;
+    background-color: white;
+
+    transition: background-color 0.2s linear;
+  }
+
+  &::before {
+    top: 0;
+    width: 100%;
+  }
+
+  &::after {
+    bottom: 0;
+    width: 10px;
+  }
+
+  // &:hover,
+  // &:focus {
+  //   .burger__lines {
+  //     opacity: 0;
+  //   }
+
+  //   &::after {
+  //     width: 100%;
+
+  //     background-color: $bc-animation;
+  //     transform: rotate(-45deg);
+  //     transform-origin: left center;
+  //   }
+
+  //   &::before {
+  //     background-color: $bc-animation;
+  //     transform: rotate(45deg);
+  //     transform-origin: left bottom;
+  //   }
+  // }
+}
+
+.burger:hover .burger__lines,
+.burger:hover::after,
+.burger:hover::before {
+  background-color: rgba(157, 92, 208, 1);
+}
+
+.burger:active .burger__lines,
+.burger:active::after,
+.burger:active::before {
+  background-color: rgba(157, 92, 208, 1);
+}
+
+.burger:focus .burger__lines,
+.burger:focus::after,
+.burger:focus::before {
+  background-color: #7943a4;
+}
+
+.burger:focus {
+  outline: none;
+}

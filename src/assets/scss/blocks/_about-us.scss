@@ -1,0 +1,21 @@
+@import "vars";
+@import "mixins";
+
+.about-us {
+
+  &__container {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+  
+  }
+
+  &__descr {
+    @include font(14px, 28px);
+
+  }
+}
+
+

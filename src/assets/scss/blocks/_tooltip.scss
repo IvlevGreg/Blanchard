@@ -1,0 +1,75 @@
+@import "vars";
+@import "mixins";
+
+.tooltip {
+  position: relative;
+  &__text {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    // max-width: 264px;
+    height: 100%;
+  }
+
+  &__img {
+    transform: translateY(25%);
+  }
+  &__btn {
+  }
+}
+
+.tooltip__btn {
+  &:hover svg {
+    fill: $violet-ultra-light;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus svg {
+    fill: $violet-ultra-light;
+  }
+  &:active svg {
+    fill: $violet-middle;
+  }
+}
+.tooltip__btn svg {
+  transition: fill 0.3s ease;
+}
+@media (max-width: $bp-xl) {
+  .tooltip__btn[aria-describedby] .tooltip__path_active {
+    opacity: 1;
+  }
+  .tippy-box[data-placement^="top"] > .tippy-arrow:before {
+    display: none;
+  }
+}
+.tooltip__path_active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tippy-box[data-theme~="violet"] {
+  background-color: #9d5cd0;
+  color: $tc-secondary;
+}
+
+.tippy-box[data-theme~="violet"][data-placement^="top"] > .tippy-arrow::before {
+  border-top-color: #9d5cd0;
+}
+.tippy-box[data-theme~="violet"][data-placement^="bottom"] > .tippy-arrow::before {
+  border-bottom-color: #9d5cd0;
+}
+.tippy-box[data-theme~="violet"][data-placement^="left"] > .tippy-arrow::before {
+  border-left-color: #9d5cd0;
+}
+.tippy-box[data-theme~="violet"][data-placement^="right"] > .tippy-arrow::before {
+  border-right-color: #9d5cd0;
+}
+
+.tippy-box {
+  text-align: center;
+  border-radius: 0;
+}

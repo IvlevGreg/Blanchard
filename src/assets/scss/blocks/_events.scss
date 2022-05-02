@@ -1,0 +1,126 @@
+@import "vars";
+@import "mixins";
+
+.events__container {
+  padding-bottom: 80px;
+}
+
+.events__holder {
+  position: relative;
+}
+
+.events-item {
+  box-shadow: 0px 0px 0px 1px #cacaca inset;
+
+  &__picture {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+
+    margin-bottom: 15px;
+  }
+
+  &__header {
+    padding: 0 18px;
+  }
+
+  &__content {
+    padding: 0px 23px 0px 23px;
+    margin-bottom: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__text {
+  }
+
+  &__addres {
+    margin-bottom: 0px;
+
+    color: rgba(153, 153, 153, 1);
+    @include font(12px, 16px);
+    text-align: right;
+    font-style: normal;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    margin-left: auto;
+
+    color: rgba(153, 153, 153, 1);
+    @include font(12px, 16px);
+    text-align: right;
+  }
+
+  &__time {
+  }
+
+  &__title {
+    margin-bottom: 5px;
+
+    @include font(24px, 32.68px);
+    font-weight: 600;
+  }
+
+  &__descr {
+    @include font(16px, 32px);
+  }
+
+  &__link {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    right: 30px;
+    max-width: fit-content;
+    padding-bottom: 5px;
+
+    display: inline;
+ 
+
+    color: rgba(157, 92, 208, 1);
+    @include font(16px, 16px);
+    border-bottom: 1px solid rgba(157, 92, 208, 1);
+
+    transition: border 0.3s ease, color 0.3s ease;
+  }
+
+  &__br {
+    @media (min-width: 321px) {
+      display: none;
+    }
+  }
+}
+
+.events-item__link::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  z-index: -1;
+
+  transition: background-color 0.3s ease;
+}
+
+.events-item__link:focus:not(:active).events-item__link::after {
+  background-color: #9d5cd0;
+}
+.events-item__link:focus:not(:active) {
+  color: white;
+  border-color: white;
+}
+
+.events-item__link:hover {
+  color: #7943a4;
+  border-color: #7943a4;
+}
+.events-item__link:active {
+  color: #333333;
+  border-color: #333333;
+}

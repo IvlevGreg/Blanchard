@@ -1,0 +1,258 @@
+@import "vars";
+@import "mixins";
+
+.dropdown__list {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropdown__item {
+  position: relative;
+  color: gray;
+  margin-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.dropdown__item:last-child{
+  margin-right: 0px;
+}
+
+.dropdown__item-btn {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  outline: none;
+  padding-right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  color: $tc-secondary;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+
+
+.dropdown__item-btn::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  margin-left: 4px;
+  // margin-top: -3px;
+  transform: rotate(135deg);
+  transition: transform 0.5s ease;
+  transform-origin: cente;
+}
+
+.dropdown__item-btn.is-active {
+  color: $violet-dark;
+}
+
+.dropdown__item-btn.is-active::after {
+  transform: rotate(-45deg) translateY(4px);
+}
+
+
+
+.dropdown__dropdown {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+  padding: 40px 20px 40px 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(100%);
+}
+
+.dropdown__dropdown-wrap {
+  width: 240px;
+  max-height: 220px;
+}
+
+.dropdown__item-link:hover,
+.dropdown__item-link:focus {
+  outline: none;
+  border-color: #9d5cd0;
+}
+
+.dropdown__dropdown.is-active {
+  display: block;
+  animation-name: dropdownOpen;
+  animation-duration: 0.4s;
+}
+
+.dropdown__dropdown.is-disabled {
+  display: block;
+  animation-name: dropdownClose;
+  animation-duration: 0.4s;
+}
+
+.dropdown__drop-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dropdown__dropdown-item {
+  width: 220px;
+}
+
+.dropdown__dropdown-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.dropdown__item-link {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  font-size: 14px;
+  color: #fff;
+  background-color: #000;
+  background-origin: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.dropdown__item-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(194, 131, 243, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown__item-text {
+  position: relative;
+}
+
+
+
+.dropdown__item-link:active::before {
+  opacity: 1;
+}
+
+.dropdown__dropdown .simplebar-track.simplebar-vertical {
+  width: 2px;
+  background-color: #000;
+}
+
+.dropdown__dropdown .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  opacity: 1;
+}
+
+@keyframes dropdownOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dropdownClose {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// img
+
+.dropdown__item-link--tintoretto {
+  background-image: url("../images/hero-select/Tintoretto.jpg");
+}
+
+.dropdown__item-link--fridrih {
+  background-image: url("../images/hero-select/Friedrich.jpg");
+}
+
+.dropdown__item-link--Leonardo {
+  background-image: url(../images/hero-select/Leonardo.jpg);
+}
+
+.dropdown__item-link--Verrocchio {
+  background-image: url(../images/hero-select/Verrocchio.jpg);
+}
+
+.dropdown__item-link--Monet {
+  background-image: url(../images/hero-select/Monet.jpg);
+}
+
+.dropdown__item-link--Sisley {
+  background-image: url(../images/hero-select/Sisley.jpg);
+}
+
+.dropdown__item-link--Mane {
+  background-image: url(../images/hero-select/Mane.jpg);
+}
+
+.dropdown__item-link--Renoir {
+  background-image: url(../images/hero-select/Renoir.jpg);
+}
+
+.dropdown__item-link--van-Gogh {
+  background-image: url(../images/hero-select/van-Gogh.jpg);
+}
+
+.dropdown__item-link--Cezanne {
+  background-image: url(../images/hero-select/Cezanne.jpg);
+}
+
+.dropdown__item-link--Gauguin {
+  background-image: url(../images/hero-select/Gauguin.jpg);
+}
+
+.dropdown__item-link--Sera {
+  background-image: url(../images/hero-select/Sera.jpg);
+}
+
+.dropdown__item-link--Kandinsky {
+  background-image: url(../images/hero-select/Kandinsky.jpg);
+}
+
+.dropdown__item-link--Marinetti {
+  background-image: url(../images/hero-select/Marinetti.jpg);
+}
+
+.dropdown__item-link--Malevich {
+  background-image: url(../images/hero-select/Malevich.jpg);
+}
+
+.dropdown__item-link--Picasso {
+  background-image: url(../images/hero-select/Picasso.jpg);
+}
+
+.dropdown__item-link--Carra {
+  background-image: url(../images/hero-select/Carra.jpg);
+}
+
+.dropdown__item-link--Pratella {
+  background-image: url(../images/hero-select/Pratella.jpg);
+}
+
+.dropdown__item-link--Severini {
+  background-image: url(../images/hero-select/Severini.jpg);
+}
+
+.dropdown__item-link--Balla {
+  background-image: url(../images/hero-select/Balla.jpg);
+}

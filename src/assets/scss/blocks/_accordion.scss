@@ -1,0 +1,301 @@
+@import "vars";
+@import "mixins";
+
+.accordion__heading {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: -1px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid $light-middle-gray;
+  border-right: none;
+  border-left: none;
+  padding: 41px 120px 41px 0;
+  font-size: 24px;
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.accordion__question:first-child .accordion__heading:hover,
+.accordion__heading:hover {
+  border-color: $violet-middle;
+}
+
+.accordion__question:first-child .accordion__heading:active,
+.accordion__heading:active,
+.is-active.accordion__question:first-child .accordion__heading,
+.is-active.accordion__question .accordion__heading {
+  border-color: $violet-dark;
+}
+
+.accordion__heading-text {
+  position: relative;
+}
+
+.accordion__heading-text-wrap {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.accordion__heading-text::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: calc(100% + 8px);
+  height: 150%;
+
+  transform: translate(-50%, -50%) scaleX(0);
+  background-color: $violet-middle;
+  transition: transform 0.3s ease;
+}
+
+.accordion__heading:hover {
+  color: $violet-middle;
+}
+
+.accordion__heading:active {
+  color: $violet-dark;
+}
+
+.accordion__heading:focus:not(:active):not(:hover) .accordion__heading-text::before {
+  transform: translate(-50%, -50%) scaleX(1);
+}
+
+.head-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%) rotate(-180deg);
+  transition: background-color 0.3s, 0.6s ease, transform 0.3s, 0.6s ease;
+}
+
+.head-icon-round {
+  transition: fill 0.5s ease, stroke 0.5s ease;
+}
+
+.accordion__heading:hover .head-icon-round,
+.accordion__heading:focus:not(:hover) .head-icon-round {
+  fill: $violet-ultra-light;
+  stroke: $violet-ultra-light;
+}
+
+.accordion__heading:hover .head-icon::before,
+.accordion__heading:hover .head-icon::after,
+.accordion__heading:focus:not(:hover) .head-icon::before,
+.accordion__heading:focus:not(:hover) .head-icon::after {
+  background-color: $white;
+}
+
+.is-active .head-icon {
+  transform: translateY(-50%) rotate(0);
+}
+
+.is-active .accordion__heading .head-icon-round {
+  fill: $violet-ultra-light;
+  stroke: $violet-middle;
+}
+
+.accordion__content {
+  overflow: hidden;
+  visibility: hidden;
+  margin-top: -1px;
+  border-bottom: 1px solid transparent;
+}
+
+.is-active .accordion__content {
+  visibility: visible;
+  border-color: $light-middle-gray;
+}
+
+.accordion__content-wrap {
+  padding-top: 22px;
+  padding-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.accordion__inner-list {
+  width: 91%;
+  // column-count: 3;
+}
+
+.accordion__question {
+  //width: calc(100% / 3 - 20px);
+  width: 100%;
+}
+
+.accordion__painter-link.tab-active {
+  color: $violet-dark;
+}
+
+@media (max-width: 1024px) {
+  .accordion__question {
+    //width: calc(100% / 2 - 30px);
+  }
+}
+
+// tabs
+
+.is-active .accordion__heading-text {
+  color: $violet-tc-dark;
+}
+
+.ac .ac-panel {
+  border-bottom: none;
+}
+
+.ac {
+  border-top: solid 1px $light-middle-gray;
+}
+
+.accordion__question:last-child {
+  border-bottom: 1px solid $light-middle-gray;
+}
+
+.is-active + .ac {
+  border-top-color: $violet-dark;
+}
+
+.is-active .ac-trigger {
+  border-bottom: 1px solid $violet-dark;
+}
+//focus
+
+//hover
+.is-active,
+.is-active:last-child {
+  border-color: $violet-middle;
+}
+
+.ac:hover + .ac,
+.ac:hover {
+  border-top-color: $violet-middle;
+}
+
+.accordion__question:hover:last-child {
+  border-bottom-color: $violet-middle;
+}
+
+//active
+
+.ac:active + .ac,
+.ac:active {
+  border-top-color: $violet-dark;
+}
+
+.ac:active .accordion__heading-text {
+  color: $violet-tc-dark;
+}
+
+.ac:active .accordion__heading .head-icon-round {
+  fill: $violet-ultra-light;
+  stroke: $violet-middle;
+}
+
+.accordion__question:active:last-child {
+  border-bottom-color: $violet-dark;
+}
+
+.ac .ac-trigger {
+  padding: 20.4px 0px;
+}
+
+.ac .ac-trigger::after {
+  content: "";
+}
+
+.accordion__btn:hover {
+  background: no-repeat 0 100%;
+  background-image: linear-gradient($violet-middle, $violet-middle);
+  background-size: 100% 1px;
+  color: $violet-middle;
+}
+
+.accordion__btn:active {
+  outline: none;
+  color: $violet-dark;
+  background-size: 0% 1px;
+}
+
+.accordion__btn:focus:not(:active):not(:hover) {
+  position: relative;
+  outline: none;
+  color: $tc-secondary;
+  background-color: $violet-middle;
+}
+
+.accordion__btn {
+  position: relative;
+
+  @include font(16px, 28px);
+  text-align: left;
+
+  transition: color 0.3s ease-in-out, background-size 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  background-size: 0% 1px;
+}
+
+.accordion__link {
+  color: rgba(157, 92, 208, 1);
+}
+
+.accordion__item {
+  margin-bottom: 4px;
+}
+
+.accordion__heading:focus:not(:active):not(:hover) {
+  color: $white;
+  outline: none;
+}
+
+.is-active {
+}
+
+.accordion__heading:focus:not(:active):not(:hover) .accordion__heading-text-wrap {
+  color: white;
+}
+
+.ac:hover:not(:active):not(:focus) .accordion__heading-text-wrap {
+  color: rgba(157, 92, 208, 1);
+}
+
+.accordion {
+  &__img-empty {
+    width: 90px;
+    height: 130px;
+  }
+  &__text {
+    padding-left: 24px;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    @include font(24px, 32px);
+    font-weight: 600;
+  }
+
+  &__descr {
+    margin-bottom: 10px;
+    @include font(16px, 22px);
+
+    max-width: 275px;
+  }
+
+  &__link {
+    @include font(16px, 22px);
+  }
+}
+

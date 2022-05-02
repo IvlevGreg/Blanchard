@@ -1,0 +1,79 @@
+@import "vars";
+@import "mixins";
+
+.arrow__btn {
+  position: absolute;
+  z-index: $index-event-btns;
+  top: 50%;
+
+  flex-shrink: 0;
+  background-color: rgba(236, 236, 236, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+
+  &:hover .arrow__round {
+    fill: #d1a9f0;
+    stroke: #d1a9f0;
+  }
+
+  &:active .arrow__round {
+    fill: #d1a9f0;
+    stroke: #9d5cd0;
+  }
+
+  &:focus .arrow__round {
+    stroke: #9d5cd0;
+  }
+}
+
+.event-btn {
+  width: 50px;
+  height: 50px;
+}
+
+.projects-btn {
+  width: 30px;
+  height: 30px;
+}
+
+.arrow__btn-next {
+  right: 0;
+  transform: translateX(50%);
+}
+.arrow__btn-prev {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.event-btn.swiper-button-disabled {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.swiper-button-disabled {
+  cursor: default;
+}
+
+.swiper-button-disabled:hover .arrow__round {
+  fill: none;
+  stroke: none;
+}
+
+.event-btn.swiper-button-disabled {
+  transform: translateX(-100%);
+}
+
+.arrow {
+  &__right {
+    transform: rotate(90deg);
+  }
+  &__left {
+    transform: rotate(-90deg);
+  }
+  &__svg {
+    width: 100%;
+    height: 100%;
+  }
+}

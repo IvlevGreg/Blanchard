@@ -1,0 +1,86 @@
+@import "vars";
+@import "mixins";
+
+
+.checkbox__label {
+   width: fit-content;
+  display: block;
+  cursor: pointer;
+}
+
+.checkbox__label:not(:last-child){
+margin-bottom: 13px;
+}
+
+.checkbox__label:hover .checkbox__visible {
+  border-color: $chec-animation;
+}
+
+.checkbox__label:hover .checkbox__text {
+  color: $chec-animation;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.checkbox__visible {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  border: 1px solid #FFF;
+  vertical-align: middle;
+  transition: border-color .3s ease;
+}
+
+.checkbox__visible::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: $chec-animation;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity .3s ease;
+}
+
+.checkbox__input:checked ~ .checkbox__visible {
+  border-color: $chec-animation;
+}
+
+.checkbox__input:checked ~ .checkbox__visible::before {
+  opacity: 1;
+}
+
+.checkbox__input:focus ~ .checkbox__visible {
+  border-color: $chec-animation;
+}
+
+.checkbox__input:focus ~ .checkbox__visible::before {
+  background-color: $chec-animation;
+}
+
+.checkbox__text {
+  vertical-align: middle;
+  transition: color .3s ease;
+}
+
+.checkbox__input:checked ~ .checkbox__text {
+  color: $chec-animation;
+}
+
+.checkbox__input:focus ~ .checkbox__text {
+  color: $chec-animation;
+}

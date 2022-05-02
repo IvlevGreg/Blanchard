@@ -1,0 +1,120 @@
+@import "vars";
+@import "mixins";
+
+.select-title {
+  margin-bottom: 6px;
+
+  @include font(16px, 32px);
+  font-weight: 600;
+}
+
+.choices__inner {
+  min-height: 40px;
+  background-color: initial;
+  color: $tc-secondary;
+  border-color: white;
+  border-radius: 6px;
+}
+
+.choices[data-type*="select-one"] .choices__inner {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.is-open .choices__inner {
+  border-color: white;
+  border-radius: 6px;
+}
+
+.choices__placeholder {
+  color: $tc-secondary;
+  opacity: 1;
+}
+.is-active .choices__placeholder {
+  display: none;
+}
+
+.is-active .choices__list {
+  background-color: black;
+  color: rgba(153, 153, 153, 1);
+  border-color: rgba(153, 153, 153, 1);
+  border-radius: 6px;
+}
+
+.is-active .choices__item:not(:last-child) {
+  border-bottom: 1px solid rgba(153, 153, 153, 1);
+}
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  border-radius: 6px;
+  background: none;
+}
+
+.choices[data-type*="select-one"]::after {
+  right: 14px;
+  width: 10px;
+  height: 5px;
+  border: none;
+
+  background-image: url("../images/gallery/gallery_arrow.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  // border-color: white;
+  // border-top: 2px solid white;
+  // border-right: 2px solid white;
+  transform: translateY(3px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.choices[data-type*="select-one"].is-open::after {
+  margin-top: 0;
+  width: 10px;
+  height: 5px;
+
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(180deg) translateY(0px);
+}
+
+.choices__item {
+  font-size: 16px;
+}
+
+.choices__list--single {
+  padding-left: 8px;
+  padding-top: 10px;
+}
+
+//
+
+.choices {
+  border-radius: 6px;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.is-highlighted {
+  color: white;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background-color: lighten(black, 20%);
+}
+
+.choices__list--dropdown {
+  transform: translateY(-10%);
+  transition: transform 0.2s ease;
+}
+
+.choices__list--dropdown.is-active {
+  transform: translateY(0);
+}

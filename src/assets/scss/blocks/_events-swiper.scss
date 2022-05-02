@@ -1,0 +1,36 @@
+@import "vars";
+@import "mixins";
+
+.events {
+  & .swiper-pagination {
+    bottom: 45px;
+    left: 0;
+    right: 0;
+  }
+
+  & .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  & .swiper-pagination-bullet-active {
+    background-color: rgba(102, 102, 102, 1);
+  }
+
+  .swiper-pagination-bullet:hover {
+    background-color: rgba(100, 100, 100, 1);
+
+  }
+
+  & .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 7.5px;
+  }
+}
+
+.event-btn {
+  display: none;
+}
+
+
+

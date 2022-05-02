@@ -1,0 +1,165 @@
+@import "vars";
+@import "mixins";
+
+.projects__holder {
+  position: relative;
+}
+
+
+
+.project-item__img {
+}
+
+.projects {
+  &__container {
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__descr {
+  }
+
+  &__holder {
+  }
+
+  &__partner {
+    margin-bottom: 10px;
+
+    @include font(18px, 32px);
+    font-weight: 600;
+  }
+
+  &__link {
+    position: relative;
+
+    color: rgba(157, 92, 208, 1);
+
+    transition: color 0.3s ease-in-out, background-size 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    background-size: 0% 1px;
+  }
+}
+
+
+
+.project-item {
+
+  box-sizing: border-box;
+    display: block;
+
+    border: 1px solid #cacaca;
+    transition: border 0.3s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus .project-item__img {
+      filter: grayscale(0);
+      opacity: (1);
+    }
+
+  &:hover {
+    outline: none;
+  }
+  &:hover .project-item__img {
+    filter: grayscale(0);
+    opacity: (1);
+  }
+
+  &:active .project-item__img {
+    filter: grayscale(0);
+    opacity: (1);
+  }
+  &:active {
+    border-color: rgba(157, 92, 208, 1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus {
+    border-color: rgba(157, 92, 208, 1);
+    outline: none;
+  }
+
+  
+    
+  
+  &__img {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+
+    filter: grayscale(1);
+    opacity: (0.4);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+}
+
+.arrow__tick {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.projects-btn.swiper-button-disabled .arrow__tick {
+  opacity: (0.4);
+  filter: grayscale(1);
+}
+
+.projects-btn-prev {
+  left: 15px;
+}
+
+.projects-btn-next {
+  right: 15px;
+}
+
+.swiper-project-container {
+  padding: 0 48px;
+}
+
+.projects__link::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  z-index: -1;
+
+  transition: background-color 0.3s ease;
+}
+
+.projects__link:hover {
+  background: no-repeat 0 100%;
+  background-image: linear-gradient($violet-middle, $violet-middle);
+  background-size: 100% 1px;
+  color: $violet-middle;
+}
+
+.projects__link:active {
+  outline: none;
+  color: $violet-dark;
+  background-size: 0% 1px;
+}
+
+.projects__link:focus:not(:active):not(:hover) {
+  position: relative;
+  outline: none;
+  color: $tc-secondary;
+}
+
+.projects__link:focus:not(:active).projects__link::after {
+  background-color: $violet-middle;
+}
+
+.projects-btn {
+  top: calc(50% - 30px / 2);
+}
+
+
+
+.swiper-project-container {
+  position: relative;
+}

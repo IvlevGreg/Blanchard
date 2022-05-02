@@ -1,0 +1,143 @@
+@import "vars";
+@import "mixins";
+
+.hero {
+  position: relative;
+  z-index: $index-hero-top;
+
+  color: $tc-secondary;
+
+  &__container {
+    padding: 30px 20px 45px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    @include font(32px, 40px);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__descr {
+    margin-bottom: 30px;
+    @include font(12px, 16.34px);
+
+    text-align: center;
+  }
+
+  &__btn {
+    position: relative;
+    padding: 12px 18px;
+    @include font(12px, 16.34px);
+    font-weight: 700;
+
+    border-radius: 100px;
+    background-color: $bc-btn;
+
+    color: white;
+    background-color: rgba(157, 92, 208, 1);
+    border-radius: 100px;
+
+    transition: color 0.3s ease, border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0 0 2px rgba(209, 169, 240, 1) inset;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:focus:not(:hover).hero__btn::before {
+      border-radius: 100px;
+      box-shadow: 0 0 0 2px rgba(194, 131, 243, 1) inset;
+    }
+
+    &:active {
+      background-color: rgba(121, 67, 164, 1);
+      // border: 3px solid #d1a9f0;
+      box-shadow: 0 0 0 2px rgba(209, 169, 240, 1) inset;
+    }
+
+    &:active.hero__btn::before {
+      box-shadow: none;
+    }
+  }
+
+  &__btn::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+
+    border-radius: 100px;
+    transition: box-shadow 0.3s ease;
+  }
+}
+
+
+
+// swiper
+
+.container-wrapper {
+  position: relative;
+}
+
+.slider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider.swiper-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: resize;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.slide {
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(134, 126, 126);
+}
+
+.slide-img-1 {
+  background-image: url("../images/hero/neuschwanstein_sm.jpg");
+}
+
+.slide-img-2 {
+  background-image: url("../images/hero/apotheosis-of-hercules_sm.jpg");
+}
+
+.slide-img-3 {
+  background-image: url("../images/hero/oak-grove_sm.jpg");
+}
+
+@keyframes resize {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}

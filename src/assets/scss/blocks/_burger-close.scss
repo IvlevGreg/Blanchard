@@ -1,0 +1,50 @@
+@import "vars";
+@import "mixins";
+
+.burger-close {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+.burger-close:hover::before,
+.burger-close:focus::before,
+.burger-close:hover::after,
+.burger-close:focus::after {
+  background: $violet-middle;
+}
+
+.burger-close:active::after,
+.burger-close:active::before {
+  background: $violet-dark;
+}
+
+.burger-close:focus {
+  outline: none;
+}
+
+.burger-close::before,
+.burger-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+.burger-close:before {
+  transform: rotate(45deg);
+}
+
+.burger-close:after {
+  transform: rotate(-45deg);
+}
+
+.burger-close_absolute {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
