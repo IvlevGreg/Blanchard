@@ -35,7 +35,7 @@ function init() {
     // Необходимо указать данный тип макета.
     iconLayout: 'default#image',
     // Своё изображение иконки метки.
-    iconImageHref: 'https://img.icons8.com/office/2x/one-free.png',
+    iconImageHref: 'https://i.ibb.co/Lzk5rR6/map-icon.png',
     // Размеры метки.
     iconImageSize: [20, 20],
     // Смещение левого верхнего угла иконки относительно
