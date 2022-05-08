@@ -10,7 +10,7 @@ burger.addEventListener('click',
 
     menu.classList.toggle('modal-nav--active');
 
-    document.body.classlist.toggle('stop-scroll');
+    document.body.classList.toggle('stop-scroll');
   })
 menuLinks.forEach(function (el) {
   el.addEventListener('click', function () {

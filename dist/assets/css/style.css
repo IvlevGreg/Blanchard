@@ -88,6 +88,12 @@ ul {
     display: flex;
 }
 
+* {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
 .d-none {
     display: none;
 }
@@ -241,11 +247,6 @@ address {
     height: 100%;
 }
 
-.logo {
-    margin-right: 6px;
-    margin-top: 5px;
-}
-
 .logo__link {
     width: 100%;
     height: 100%;
@@ -257,17 +258,24 @@ address {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .dropdown__item {
     position: relative;
     color: gray;
-    margin: 0 auto;
+    margin-right: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+.dropdown__item:last-child {
+    margin-right: 0px;
+}
+
 .dropdown__item-btn {
+    padding: 0;
     height: 100%;
     display: -ms-flexbox;
     display: flex;
@@ -1445,6 +1453,11 @@ address {
     position: relative;
 }
 
+.header__logo {
+    margin-right: 6px;
+    margin-top: 5px;
+}
+
 .header__content-top {
     background-color: black;
 }
@@ -2224,7 +2237,7 @@ address {
 }
 
 .events .swiper-pagination {
-    bottom: 50px;
+    bottom: 45px;
     left: 0;
     right: 0;
 }
@@ -2279,7 +2292,7 @@ address {
 
 .events-item__content {
     padding: 0px 23px 0px 23px;
-    margin-bottom: 105px;
+    margin-bottom: 95px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -2328,7 +2341,6 @@ address {
     max-width: fit-content;
     padding-bottom: 5px;
     display: inline;
-    margin-left: 6px;
     color: #9d5cd0;
     font-size: 16px;
     line-height: 16px;
@@ -2887,7 +2899,7 @@ address {
 
     .accordion__content-wrap {
         padding-top: 27px;
-        padding-bottom: 57px;
+        padding-bottom: 27px;
     }
 
     .head-icon {
@@ -2912,8 +2924,8 @@ address {
     }
 
     .events-item__content {
-        padding: 0px 37px 50px 37px;
-        min-height: 383px;
+        padding: 0px 37px 0 37px;
+        margin-bottom: 105px;
     }
 
     .events-item__img {
@@ -2926,10 +2938,11 @@ address {
 
     .events-item__link {
         margin-left: 0;
+        left: 40px;
     }
 
     .events__container {
-        padding-bottom: 116px;
+        padding-bottom: 120px;
     }
 
     .events .swiper-pagination {
@@ -2947,10 +2960,10 @@ address {
     }
 
     .projects__text {
-        margin-bottom: 30px;
+        margin-bottom: 28px;
     }
 
-    .projects__img {
+    .project-item__img {
         aspect-ratio: 265/100;
     }
 
@@ -3133,20 +3146,30 @@ address {
         padding-bottom: 31px;
     }
 
+    .events__container {
+        padding-bottom: 116px;
+    }
+
     .events-item__header {
         padding: 0 33px;
     }
 
     .events-item__content {
-        padding: 0px 34px 50px 34px;
+        padding: 0px 34px 0 34px;
+        margin-bottom: 75px;
     }
 
     .events-item__title {
         margin-bottom: 5px;
     }
 
+    .events-item__link {
+        left: 35px;
+        bottom: 53px;
+    }
+
     .projects__container {
-        padding-bottom: 82px;
+        padding-bottom: 80px;
     }
 
     .projects__text {
@@ -3154,7 +3177,11 @@ address {
     }
 
     .project-item__img {
-        aspect-ratio: 30/9;
+        aspect-ratio: 31.8/10;
+    }
+
+    .projects__partner {
+        margin-bottom: 24px;
     }
 
     .form__label {
@@ -3206,6 +3233,8 @@ address {
         color: white;
         -ms-flex-direction: row;
         flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 
     .nav__item {
@@ -3342,10 +3371,6 @@ address {
         column-count: 3;
     }
 
-    .accordion__content-wrap {
-        padding-bottom: 55px;
-    }
-
     .events__container {
         padding-bottom: 80px;
     }
@@ -3364,8 +3389,7 @@ address {
     }
 
     .events-item__content {
-        padding: 0px 50px 43px 50px;
-        min-height: 297px;
+        padding: 0px 50px 0px 50px;
     }
 
     .events-item__addres {
@@ -3420,10 +3444,6 @@ address {
         display: none;
     }
 
-    .search-btn {
-        margin-right: 20px;
-    }
-
     .search__input {
         width: 221px;
     }
@@ -3437,7 +3457,7 @@ address {
     }
 
     .nav__item {
-        margin: 0 65px 0 0;
+        margin: 0 62px 0 0;
     }
 
     .main__list {
@@ -3454,9 +3474,22 @@ address {
         margin-right: 0;
     }
 
+    .dropdown__item {
+        margin-right: 92px;
+    }
+
     .accordion__img-empty {
         width: 275px;
         height: 189px;
+    }
+
+    .events-item__content {
+        margin-bottom: 140px;
+    }
+
+    .events-item__link {
+        bottom: 40px;
+        left: 50px;
     }
 
     .contact__container {
