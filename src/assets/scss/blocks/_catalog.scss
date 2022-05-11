@@ -68,7 +68,24 @@
   display: block;
 }
 
+.catalog-item--active {
+  display: block;
 
+  animation: opacity .7s infinite;
+  animation-iteration-count:1;
+  animation-timing-function: ease-in-out;
+
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+ 100% {
+    opacity: 1;
+  }
+}
 
 
 

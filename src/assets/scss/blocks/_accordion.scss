@@ -283,7 +283,7 @@
 
   &__title {
     margin-bottom: 5px;
-    @include font(24px, 32px);
+    @include font(18px, 32px);
     font-weight: 600;
   }
 
@@ -299,3 +299,10 @@
   }
 }
 
+.accordion__btn--active {
+  color: $violet-middle;
+}
+
+.accordion__heading:hover {
+ outline: none;
+}

@@ -97,7 +97,7 @@ ul {
 .container {
   position: relative;
   z-index: 10;
-  max-width: 1920px;
+  max-width: 1600px;
   min-width: 288px;
   width: 100%;
   padding: 0 15px;
@@ -874,7 +874,7 @@ address {
 }
 .accordion__title {
   margin-bottom: 5px;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
   font-weight: 600;
 }
@@ -891,6 +891,10 @@ address {
 
 .accordion__btn--active {
   color: #9d5cd0;
+}
+
+.accordion__heading:hover {
+  outline: none;
 }
 
 .form {
@@ -978,10 +982,15 @@ address {
 }
 .search__input:hover {
   border-color: #9d5cd0;
+  outline: none;
 }
 .search__input:focus {
   outline: none;
   border-color: #7943a4;
+}
+
+.form__input:focus {
+  outline: none;
 }
 
 [class*=ground-pane] {
@@ -1245,25 +1254,25 @@ address {
 .tooltip__img {
   transform: translateY(25%);
 }
-.tooltip__btn:hover svg {
+.tooltip:hover svg {
   fill: #d1a9f0;
 }
-.tooltip__btn:focus {
+.tooltip:focus {
   outline: none;
 }
-.tooltip__btn:focus svg {
+.tooltip:focus svg {
   fill: #d1a9f0;
 }
-.tooltip__btn:active svg {
+.tooltip:active svg {
   fill: #9d5cd0;
 }
 
-.tooltip__btn svg {
+.tooltip svg {
   transition: fill 0.3s ease;
 }
 
 @media (max-width: 1200px) {
-  .tooltip__btn[aria-describedby] .tooltip__path_active {
+  .tooltip[aria-describedby] .tooltip__path_active {
     opacity: 1;
   }
 
@@ -1533,7 +1542,7 @@ address {
 
 .gallery {
   color: white;
-  background-image: url("../images/gallery/gallery_background-xl.png");
+  background-image: url("../images/gallery/gallery_background-sm.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1571,7 +1580,7 @@ address {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  color: #373850;
+  color: white;
 }
 .swiper-gallery__nav-btn {
   position: relative;
@@ -1840,7 +1849,7 @@ address {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  transform: translateY(3px);
+  transform: translateY(50%);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -1849,7 +1858,7 @@ address {
   width: 10px;
   height: 5px;
   transition: transform 0.2s ease-in-out;
-  transform: rotate(180deg) translateY(0px);
+  transform: rotate(180deg) translateY(1px);
 }
 
 .choices__item {
@@ -2086,11 +2095,6 @@ address {
   border-bottom: 1px solid #9d5cd0;
   transition: border 0.3s ease, color 0.3s ease;
 }
-@media (min-width: 321px) {
-  .events-item__br {
-    display: none;
-  }
-}
 
 .events-item__link::after {
   content: "";
@@ -2283,6 +2287,10 @@ address {
 .contact__link-svg {
   width: 50px;
   height: 50px;
+}
+
+.contact__link {
+  transition: opacity 0.3s ease;
 }
 
 .contact__link:hover {
@@ -2515,6 +2523,7 @@ address {
   .gallery__container {
     padding-top: 80px;
     padding-bottom: 80px;
+    background-image: url("../images/gallery/gallery_background-md.jpg");
   }
 
   .select-title {
@@ -2580,6 +2589,10 @@ address {
   .accordion__content-wrap {
     padding-top: 27px;
     padding-bottom: 27px;
+  }
+  .accordion__title {
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .head-icon {
@@ -2730,6 +2743,16 @@ address {
     background-color: black;
   }
 
+  .burger-close_absolute {
+    top: 36px;
+    right: 52px;
+  }
+
+  .burger-close_lg-sm {
+    width: 30px;
+    height: 30px;
+  }
+
   .slide-img-1 {
     background-image: url("../images/hero/neuschwanstein_lg.jpg");
   }
@@ -2745,6 +2768,7 @@ address {
   .gallery__container-left {
     width: 30%;
     margin-bottom: 40px;
+    background-image: url("../images/gallery/gallery_background-lg.jpg");
   }
 
   .swiper-gallery {
@@ -2834,11 +2858,6 @@ address {
   }
 }
 @media (min-width: 1200px) {
-  .container {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-
   .title {
     margin-bottom: 16px;
     font-size: 48px;
@@ -2957,6 +2976,7 @@ address {
   .gallery__container-left {
     width: 25%;
     margin-bottom: 0;
+    background-image: url("../images/gallery/gallery_background-xl.jpg");
   }
   .gallery__select {
     max-width: none;
@@ -3035,11 +3055,6 @@ address {
   }
 }
 @media (min-width: 1680px) {
-  .container {
-    padding-left: 160px;
-    padding-right: 160px;
-  }
-
   .search_xl {
     display: block;
   }

@@ -52,6 +52,9 @@
     height: 50px;
   }
 }
+.contact__link{
+transition: opacity .3s ease;
+}
 
 .contact__link:hover {
   opacity: 0.4;

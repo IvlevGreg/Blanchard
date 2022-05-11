@@ -199,6 +199,8 @@
     &__container {
       padding-top: 80px;
       padding-bottom: 80px;
+      background-image: url("../images/gallery/gallery_background-md.jpg");
+
     }
   }
 
@@ -274,6 +276,9 @@
       padding-top: 27px;
       // padding-bottom: 57px;
       padding-bottom: 27px;
+    }
+    &__title {
+      @include font(24px, 32px);
     }
   }
 
@@ -462,6 +467,15 @@
     background-color: $dark;
   }
 
+  .burger-close_absolute{
+    top: 36px;
+    right: 52px;
+  }
+
+  .burger-close_lg-sm{
+    width: 30px;
+    height: 30px;
+  }
   //hero
 
   .slide-img-1 {
@@ -481,6 +495,8 @@
     &__container-left {
       width: 30%;
       margin-bottom: 40px;
+      background-image: url("../images/gallery/gallery_background-lg.jpg");
+
     }
   }
 
@@ -593,11 +609,7 @@
 }
 
 @media (min-width: $bp-xl) {
-  .container {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-
+  
   .title {
     margin-bottom: 16px;
     @include font(48px, 65.37px);
@@ -739,6 +751,8 @@
     &__container-left {
       width: 25%;
       margin-bottom: 0;
+      background-image: url("../images/gallery/gallery_background-xl.jpg");
+
     }
 
     &__select {
@@ -781,7 +795,7 @@
     }
     &__content-wrap {
       // padding-bottom: 55px;
-      
+      //pb удалить
     }
   }
 
@@ -845,10 +859,7 @@
 }
 
 @media (min-width: $bp-xxxl) {
-  .container {
-    padding-left: 160px;
-    padding-right: 160px;
-  }
+  
   //header
   .search_xl {
     display: block;

@@ -21,7 +21,7 @@
   }
 }
 
-.tooltip__btn {
+.tooltip {
   &:hover svg {
     fill: $violet-ultra-light;
   }
@@ -35,11 +35,11 @@
     fill: $violet-middle;
   }
 }
-.tooltip__btn svg {
+.tooltip svg {
   transition: fill 0.3s ease;
 }
 @media (max-width: $bp-xl) {
-  .tooltip__btn[aria-describedby] .tooltip__path_active {
+  .tooltip[aria-describedby] .tooltip__path_active {
     opacity: 1;
   }
   .tippy-box[data-placement^="top"] > .tippy-arrow:before {

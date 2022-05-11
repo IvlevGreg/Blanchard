@@ -98,11 +98,19 @@
   transition: border-color .3s ease;
   &:hover {
     border-color: $violet-middle;
+    outline: none;
   }
 
   &:focus {
     outline: none;
     border-color: $violet-dark;
+  }
+}
+
+.form__input{
+  &:focus {
+
+    outline: none;
   }
 }
 
