@@ -58,11 +58,10 @@ html {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
+  min-width: 320px;
 }
 
-body {
-  overflow-x: hidden;
-}
 
 a,
 button {
@@ -128,9 +127,6 @@ ul {
   list-style: none;
 }
 
-.body {
-  overflow-x: hidden;
-}
 
 .main {
   position: relative;
@@ -158,6 +154,10 @@ address {
 
 .stop-scroll {
   overflow: hidden;
+}
+
+.swiper-slide {
+  height: auto;
 }
 
 @import "blocks/arrow";

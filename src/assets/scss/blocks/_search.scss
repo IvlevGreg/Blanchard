@@ -112,3 +112,22 @@
 .search_xl {
   display: none;
 }
+
+
+.search__input {
+  transition: border-color .3s ease;
+  &:hover {
+    border-color: $violet-middle;
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $violet-dark;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+}

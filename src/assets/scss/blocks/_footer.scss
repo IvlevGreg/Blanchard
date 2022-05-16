@@ -12,6 +12,8 @@
   }
 
   &__links {
+    flex-wrap: wrap;
+    max-width: 280px;
     margin-bottom: 15px;
   }
 

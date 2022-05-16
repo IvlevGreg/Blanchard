@@ -223,6 +223,7 @@
   background-image: linear-gradient($violet-middle, $violet-middle);
   background-size: 100% 1px;
   color: $violet-middle;
+  outline: none ;
 }
 
 .accordion__btn:active {
@@ -268,9 +269,9 @@
   color: white;
 }
 
-.ac:hover:not(:active):not(:focus) .accordion__heading-text-wrap {
-  color: rgba(157, 92, 208, 1);
-}
+// .ac:hover:not(:active):not(:focus) .accordion__heading-text-wrap {
+//   color: rgba(157, 92, 208, 1);
+// }
 
 .accordion {
   &__img-empty {
@@ -304,5 +305,5 @@
 }
 
 .accordion__heading:hover {
- outline: none;
+  outline: none;
 }

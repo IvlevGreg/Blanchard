@@ -12,6 +12,7 @@
 
 .projects {
   &__container {
+    padding-top: 40px;
   }
 
   &__text {
@@ -55,9 +56,9 @@
       outline: none;
     }
 
-    &:focus .project-item__img {
-      filter: grayscale(0);
-      opacity: (1);
+    &:focus:not(:hover) .project-item__img {
+      filter: grayscale(1);
+      opacity: (0.4);
     }
 
   &:hover {
@@ -80,14 +81,14 @@
     outline: none;
   }
 
-  &:focus {
+  &:focus:not(:hover) {
     border-color: rgba(157, 92, 208, 1);
     outline: none;
   }
 
-  
-    
-  
+
+
+
   &__img {
     width: calc(100% - 2px);
     height: calc(100% - 2px);

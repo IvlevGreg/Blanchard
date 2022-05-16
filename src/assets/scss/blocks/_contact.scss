@@ -27,6 +27,7 @@
   }
 
   &__links {
+    max-width: 280px;
   }
 
   &__links-title {
@@ -37,6 +38,7 @@
   }
 
   &__links-list {
+    flex-wrap: wrap;
   }
 
   &__links-item {

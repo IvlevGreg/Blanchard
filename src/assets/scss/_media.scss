@@ -253,7 +253,7 @@
   .catalog {
     &__container {
       padding-top: 80px;
-      padding-bottom: 70px;
+      padding-bottom: 35px;
     }
 
     &__descr {
@@ -330,16 +330,18 @@
   }
 
   .events__container {
-    padding-bottom: 120px;
+    padding-top: 35px;
+    padding-bottom: 60px;
   }
 
   .events .swiper-pagination {
-    bottom: 75px;
+    bottom: 15px;
   }
 
   //projects
   .projects {
     &__container {
+      padding-top: 60px;
       padding-bottom: 80px;
     }
     &__partner {
@@ -557,12 +559,13 @@
 
   //catalog
   .catalog__container {
-    padding-bottom: 31px;
+    padding-bottom: 20px;
   }
 
   //events
   .events__container{
-    padding-bottom: 116px;
+    padding-top: 11px;
+    padding-bottom: 56px;
   }
 
   .events-item {
@@ -589,6 +592,7 @@
   //projects
 
   .projects__container {
+    padding-top: 60px;
     padding-bottom: 80px;
   }
   .projects__text {
@@ -810,7 +814,7 @@
 
   //events
   .events__container {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
 
   .events .swiper-pagination {
@@ -846,6 +850,7 @@
   //projects
   .projects {
     &__container {
+      padding-top: 40px;
       padding-bottom: 80px;
     }
     &__text {
@@ -970,9 +975,8 @@
   }
   //foter
   .footer__item:not(:last-child) {
-    margin-right: 12px;
-    width: 100%;
-    height: 100%;
+    margin-right: 20px;
+
   }
 
   .footer__link-svg {
@@ -980,6 +984,10 @@
     height: 45px;
   }
 
+  .footer__item {
+    width: 45px;
+    height: 45px;
+  }
   .logo-footer {
     margin-top: 0;
   }

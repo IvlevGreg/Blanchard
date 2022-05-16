@@ -28,21 +28,27 @@ const path = {
         js:     distPath + "assets/js/",
         css:    distPath + "assets/css/",
         images: distPath + "assets/images/",
-        fonts:  distPath + "assets/fonts/"
+        fonts:  distPath + "assets/font/",
+        modules:  distPath + "src/modules/"
+
     },
     src: {
         html:   srcPath + "*.html",
         js:     srcPath + "assets/js/*.js",
         css:    srcPath + "assets/scss/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+        fonts:  srcPath + "assets/font/**/*.{eot,woff,woff2,ttf,svg}",
+        modules:  srcPath + "src/modules/**/*"
+
     },
     watch: {
         html:   srcPath + "**/*.html",
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+        fonts:  srcPath + "assets/font/**/*.{eot,woff,woff2,ttf,svg}",
+        modules:  srcPath + "src/modules/**/*"
+
     },
     clean: "./" + distPath
 }
@@ -50,6 +56,12 @@ const path = {
 
 
 /* Tasks */
+
+const modules = () => {
+  return src("src/modules/**").pipe(dest("dist/modules"))
+      .pipe(browserSync.reload({stream: true}));
+
+};
 
 function serve() {
     browserSync.init({
@@ -210,9 +222,10 @@ function watchFiles() {
     gulp.watch([path.watch.js], jsWatch);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.fonts], fonts);
+    gulp.watch([path.watch.modules], modules);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, modules));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
