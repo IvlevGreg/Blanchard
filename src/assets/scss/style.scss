@@ -1,6 +1,13 @@
 @import "vars";
 @import "mixins";
 
+@import "./vendors/normalize.scss";
+@import "./vendors/choices.scss";
+@import "./vendors/simplebar.scss";
+@import "./vendors/swiper.scss";
+@import "./vendors/accordion.scss";
+@import "./vendors/tippy.scss";
+
 @font-face {
   font-family: "Open Sans";
   src: local("Open Sans Italic"), local("OpenSans-Italic"), url("../font/OpenSans-Italic.woff2") format("woff2"),
@@ -61,7 +68,6 @@ body {
   overflow-x: hidden;
   min-width: 320px;
 }
-
 
 a,
 button {
@@ -126,7 +132,6 @@ ul {
   padding-left: 0;
   list-style: none;
 }
-
 
 .main {
   position: relative;
