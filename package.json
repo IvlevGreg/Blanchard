@@ -5,8 +5,10 @@
   "author": "Greg",
   "homepage": "https://ivlevgreg.github.io/Blanchard/",
   "scripts": {
+    "predeploy": "gulp build",
     "deploy": "gh-pages -d dist",
     "build": "gulp build",
+    "watch": "gulp watch",
     "dev": "gulp"
   },
   "devDependencies": {
